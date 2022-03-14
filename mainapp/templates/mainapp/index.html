@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+ <body>
+{% if all_objects %}
+    <ul>
+    {% for obj in all_objects %}
+
+        <div >
+            <a href="{% url 'mainapp:task' obj.id %}">{{ obj.title }}</a>
+            <li>{{ obj.task }}</li>
+            <p><select name="select">
+            <option value="{{ obj.id }}">{{ obj.progress_choice }}</option>
+           </select></p>
+            <li>{{ obj.date }}</li>
+        </div>
+        {% endfor %}
+
+    </ul>
+    {% else %}
+    <p>No task are available.</p>
+    {% endif %}
+ </body>
+</html>
