@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Card</title>
+</head>
+<body>
+<ul>
+    {% for obj in one_card %}
+    <div>
+        <br>{{ obj.title }}</br>
+        <br>
+        <li>{{ obj.task }}</li>
+        </br>
+        <p><select name="select">
+            <option value="{{ obj.id }}">{{ obj.progress_choice }}</option>
+        </select></p>
+        <li>{{ obj.date }}</li>
+    </div>
+    {% endfor %}
+
+</ul>
+</body>
+</html>

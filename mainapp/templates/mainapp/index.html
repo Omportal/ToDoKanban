@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Главная доска</title>
 </head>
  <body>
+ <a href="{% url 'mainapp:create' %}"><li><button class="btn btn-info"></button></li>Добавить</a>
 {% if all_objects %}
     <ul>
     {% for obj in all_objects %}
 
-        <div >
-            <a href="{% url 'mainapp:task' obj.id %}">{{ obj.title }}</a>
-            <li>{{ obj.task }}</li>
+        <div ><br>
+            <a href="{% url 'mainapp:card' obj.title %}">{{ obj.title }}</a></br>
+            <br><li>{{ obj.task }}</li></br>
             <p><select name="select">
             <option value="{{ obj.id }}">{{ obj.progress_choice }}</option>
            </select></p>
