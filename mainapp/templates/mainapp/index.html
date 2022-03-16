@@ -1,28 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Главная доска</title>
-</head>
- <body>
- <a href="{% url 'mainapp:create' %}"><li><button class="btn btn-info"></button></li>Добавить</a>
+{% extends 'mainapp/base.html' %}
+{% block content %}
 {% if all_objects %}
-    <ul>
     {% for obj in all_objects %}
-
-        <div ><br>
-            <a href="{% url 'mainapp:card' obj.title %}">{{ obj.title }}</a></br>
-            <br><li>{{ obj.task }}</li></br>
-
-            <p>{{ obj.progress_choice }}</p>
-
-            <li>{{ obj.date }}</li>
-        </div>
+       <div class="card" style="width: 18rem;">
+      <div class="card-top" style="background-color: grey;" >
+      <div class="card-body">
+        <h5 class="card-title" style="color: blue;">{{ obj.title }}</h5>
+        <p class="card-text">{{ obj.task }}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ obj.progress_choice }}</li>
+        <li class="list-group-item">{{ obj.date }}</li>
+        <li class="list-group-item"><a href="{% url 'mainapp:card' obj.title %}" class="card-link">Подробнее</a></li>
+      </ul>
+    </div>
     {% endfor %}
-
-    </ul>
     {% else %}
     <p>No task are available.</p>
     {% endif %}
- </body>
-</html>
+{% endblock %}

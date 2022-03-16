@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Card</title>
-</head>
- <body>
+{% extends 'mainapp/base.html' %}
+{% block content %}
    <div>
      <form method="post">
          {% csrf_token %}
@@ -17,6 +12,4 @@
 
      </form>
    </div>
-
- </body>
-</html>
+{% endblock %}
