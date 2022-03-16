@@ -14,7 +14,7 @@ class Taskform(ModelForm):
             }),
             'task': Textarea(attrs={
                 'class': 'form-control',
-                'placeholder': 'Название задачи'
+                'placeholder': 'Описание задачи'
             }),
             'date': DateTimeInput(attrs={
                 'class': 'form-control',

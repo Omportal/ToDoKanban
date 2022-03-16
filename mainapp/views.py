@@ -4,15 +4,17 @@ from django.template import loader
 from .models import Task
 from django.urls import reverse
 from .forms import Taskform
+from django.views import generic
 
 
-def task(request, task_id=1):
-    all_objects = Task.objects.all()
-    template = loader.get_template('mainapp/index.html')
-    context = {
-        'all_objects': all_objects,
-    }
-    return render(request, 'mainapp/index.html', context)
+class TaskView(generic.ListView):
+    template_name = 'mainapp/index.html'
+    context_object_name = "all_objects"
+
+    def get_queryset(self):
+        """Return the last five published questions."""
+        return Task.objects.all()
+
 
 
 def card(request, task_title):
@@ -30,7 +32,7 @@ def create(request):
         form = Taskform(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('/')
+            return HttpResponseRedirect('/')
         else:
             error = "Неправильно заполнена форма "
 
@@ -49,7 +51,7 @@ def edit(request, task_title):
         form = Taskform(request.POST, instance=obj)
         if form.is_valid():
             form.save()
-            return redirect("/")
+            return HttpResponseRedirect("/")
         else:
             error = "Неправильно заполнена форма "
 
