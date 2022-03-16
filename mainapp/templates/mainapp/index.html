@@ -13,9 +13,9 @@
         <div ><br>
             <a href="{% url 'mainapp:card' obj.title %}">{{ obj.title }}</a></br>
             <br><li>{{ obj.task }}</li></br>
-            <p><select name="select">
-            <option value="{{ obj.id }}">{{ obj.progress_choice }}</option>
-           </select></p>
+
+            <p>{{ obj.progress_choice }}</p>
+
             <li>{{ obj.date }}</li>
         </div>
         {% endfor %}

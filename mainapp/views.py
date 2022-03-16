@@ -40,3 +40,22 @@ def create(request):
         'error': error
     }
     return render(request, 'mainapp/create.html', data)
+
+
+def edit(request, task_title):
+    obj = Task.objects.get(title=task_title)
+    error = ''
+    if request.method == "POST":
+        form = Taskform(request.POST, instance=obj)
+        if form.is_valid():
+            form.save()
+            return redirect("/")
+        else:
+            error = "Неправильно заполнена форма "
+
+    form = Taskform(instance=obj)
+    data = {
+        'form': form,
+        'error': error
+    }
+    return render(request, 'mainapp/edit.html', data)

@@ -8,4 +8,5 @@ urlpatterns = [
     path('<int:task_id>/', views.task, name='task'),
     path('create', views.create, name='create'),
     path('<str:task_title>/', views.card, name='card'),
+    path('<str:task_title>/edit', views.edit, name='edit')
 ]
