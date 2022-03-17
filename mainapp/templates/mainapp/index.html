@@ -1,19 +1,89 @@
 {% extends 'mainapp/base.html' %}
 {% block content %}
 {% if all_objects %}
-    {% for obj in all_objects %}
-       <div class="card" style="width: 18rem;">
-          <div class="card-top">
-           <div class="card-body">
-            <h5 class="card-title">{{ obj.title }}</h5>
-                <p class="card-text">{{ obj.task }}</p>
-                    <p class="card-text">{{ obj.progress_choice }}</p>
-                        <p class="card-text">{{ obj.date }}</p>
-                        <a href="{% url 'mainapp:card' obj.title %}"><button type="button" class="btn btn-dark">Подробнее</button></a>
-           </div>
-         </div>
-    </div>
-    {% endfor %}
+
+    <section class="main-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 .col-sm-6" >
+                    {% for obj in all_objects %}
+                    {% if obj.progress_choice == "Need_to_do" %}
+                    <div class="task-card">
+                        <div class="task-thumb">
+                        </div>
+                        <div class="task-details">
+                            <h4>{{ obj.title }}</h4>
+                            <p>{{ obj.task }}</p>
+                        </div>
+                        <div class="task-progress-date-info">
+                            <div class="progress-choice">
+                                {{ obj.progress_choice }}
+                            </div>
+                            <div class="create-date ">
+                                {{ obj.date }}
+                            </div>
+                            <div class="task-links">
+                                <a href="{% url 'mainapp:card' obj.title %}"><button type="button" class="btn btn-dark">Подробнее</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+
+                </div>
+                <div class="col-lg-4 .col-sm-6">
+                    {% for obj in all_objects %}
+                    {% if obj.progress_choice == "In_progress" %}
+                    <div class="task-card">
+                        <div class="task-thumb">
+                        </div>
+                        <div class="task-details">
+                            <h4>{{ obj.title }}</h4>
+                            <p>{{ obj.task }}</p>
+                        </div>
+                        <div class="task-progress-date-info">
+                            <div class="progress-choice">
+                                {{ obj.progress_choice }}
+                            </div>
+                            <div class="create-date">
+                                {{ obj.date }}
+                            </div>
+                            <div class="task-links">
+                                <a href="{% url 'mainapp:card' obj.title %}"><button type="button" class="btn btn-dark">Подробнее</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="col-lg-4 .col-sm-6">
+                    {% for obj in all_objects %}
+                    {% if obj.progress_choice == "Finish" %}
+                    <div class="task-card">
+                        <div class="task-thumb">
+                        </div>
+                        <div class="task-details">
+                            <h4>{{ obj.title }}</h4>
+                            <p>{{ obj.task }}</p>
+                        </div>
+                        <div class="task-progress-date-info">
+                            <div class="progress-choice">
+                                {{ obj.progress_choice }}
+                            </div>
+                            <div class="create-date">
+                                {{ obj.date }}
+                            </div>
+                            <div class="task-links">
+                                <a href="{% url 'mainapp:card' obj.title %}"><button type="button" class="btn btn-dark">Подробнее</button></a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
     {% else %}
     <p>No task are available.</p>
     {% endif %}

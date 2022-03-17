@@ -4,7 +4,7 @@ body {
     font-family: 'Roboto', sens-serif;
     font-size: 16px;
     font-wight: 400;
-    color: #000;
+    color: silver;
     min-width: 320px;
 }
 
@@ -45,3 +45,60 @@ a:hover {
     transform: scale(1);
 }
 /*Header */
+/*Cards*/
+.task-card {
+   margin-top: 20px;
+   border-left: solid 1px;
+   border-right: solid 1px;
+   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06);
+   transition: all .3s;
+}
+.task-card:hover {
+   background-color: black;
+   opacity: .8;
+   box-shadow: 0 14px 30px -15px rgba(0, 0, 0, 1);
+   transition: all .8s;
+}
+
+.task-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+.task-details h4 {
+    border-top: solid 1px;
+    font-size: 34px;
+    text-align: center;
+    color: silver;
+    font-weight: 500;
+    display: block;
+    height: 60px;
+    overflow: hidden;
+
+}
+
+.task-details p {
+    text-align: center;
+    font-size: 18px;
+    color: silver;
+    height: 60px;
+    overflow: hidden;
+}
+
+.progress-choice {
+    font-size: 30px;
+    border-top: solid 2px;
+    padding-top: 15px;
+    text-align: center;
+
+}
+
+.create-date {
+    font-size: 20px;
+    border-bottom: solid 2px;
+    padding-top: 15px;
+    text-align: center;
+}
+/*Cards*/
