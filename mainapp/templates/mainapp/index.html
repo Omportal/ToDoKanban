@@ -3,16 +3,15 @@
 {% if all_objects %}
     {% for obj in all_objects %}
        <div class="card" style="width: 18rem;">
-      <div class="card-top" style="background-color: grey;" >
-      <div class="card-body">
-        <h5 class="card-title" style="color: blue;">{{ obj.title }}</h5>
-        <p class="card-text">{{ obj.task }}</p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">{{ obj.progress_choice }}</li>
-        <li class="list-group-item">{{ obj.date }}</li>
-        <li class="list-group-item"><a href="{% url 'mainapp:card' obj.title %}" class="card-link">Подробнее</a></li>
-      </ul>
+          <div class="card-top">
+           <div class="card-body">
+            <h5 class="card-title">{{ obj.title }}</h5>
+                <p class="card-text">{{ obj.task }}</p>
+                    <p class="card-text">{{ obj.progress_choice }}</p>
+                        <p class="card-text">{{ obj.date }}</p>
+                        <a href="{% url 'mainapp:card' obj.title %}"><button type="button" class="btn btn-dark">Подробнее</button></a>
+           </div>
+         </div>
     </div>
     {% endfor %}
     {% else %}

@@ -3,18 +3,15 @@
 
     {% for obj in one_card %}
         <div class="card" style="width: 18rem;">
-      <div class="card-top" style="background-color: grey;" >
-      <div class="card-body">
-        <h5 class="card-title">{{ obj.title }}</h5>
-        <p class="card-text">{{ obj.task }}</p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">{{ obj.progress_choice }}</li>
-        <li class="list-group-item">{{ obj.date }}</li>
-      </ul>
-      <div class="card-body">
-        <a href="{% url 'mainapp:edit' obj.title %}"><button type="button" class="btn btn-info">Редактировать</button></a>
-      </div>
+          <div class="card-top">
+           <div class="card-body">
+            <h5 class="card-title">{{ obj.title }}</h5>
+                <p class="card-text">{{ obj.task }}</p>
+                 <p class="card-text">{{ obj.progress_choice }}</p>
+                 <p class="card-text">{{ obj.date }}</p>
+               <a href="{% url 'mainapp:edit' obj.title %}"><button type="button" class="btn btn-dark">Редактировать</button></a>
+           </div>
+       </div>
     </div>
     {% endfor %}
 
