@@ -1,9 +1,11 @@
 
 body {
-    background: url("/static/img/background.jpg") 50% 0 no-repeat fixed;
+
+    background: url("/static/img/background.jpg") 100% 0 no-repeat fixed;
+    background-size: 100% 100%;
     font-family: 'Roboto', sens-serif;
     font-size: 16px;
-    font-wight: 400;
+    font-weight: 400;
     color: silver;
     min-width: 320px;
 }
@@ -19,24 +21,46 @@ section {
 
 a {
     color: #111;
+    text-decoration: none;
 }
 
 a:hover {
-    color: #555;
+    color:#555;
 }
 
 /*Header */
-.navbar-dark .navbar-nav .nav-link {
+
+.navbar-nav .nav-link.active, .navbar-dark .navbar-nav .show>.nav-link {
+    color: #ab3535;
+    }
+
+.navbar-nav .nav-link {
+    opacity: .8;
     font-weight: 500;
     text-transform: uppercase;
+}
+.nav-slogan {
+    text-transform: uppercase;
+    color: #ab3535;
+    font-size: 1.25rem;
+    text-decoration: borderline;
+    white-space: nowrap;
+    border-top: solid .5px;
+    border-bottom: solid .5px;
+    color: #ab3535;
+    font-wight: 900;
+    opacity: .8;
+
 
 }
+
+
 
 .top-menu li a::after{
     content: "";
     display: block;
     width: 100%;
-    background-color: white;
+    background-color: #4284AD;
     height: 1px;
     transition: all .3s;
     transform: scale(0);
@@ -44,61 +68,105 @@ a:hover {
 .top-menu li a:hover::after{
     transform: scale(1);
 }
+.navbar-brand {
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    margin-right: 2rem;
+    margin-left: 0.25rem;
+    font-size: 1.25rem;
+    text-decoration: borderline;
+    white-space: nowrap;
+    border-right: solid 1px;
+    border-bottom: solid 1px;
+    color: #ab3535;
+    font-wight: 900;
+    opacity: .8;
+}
 /*Header */
 /*Cards*/
+
+
 .task-card {
+
+   border-color: #453013;
+   width: 210px;
    margin-top: 20px;
-   border-left: solid 1px;
-   border-right: solid 1px;
-   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.06);
+   box-shadow: 0 30px 30px 1px rgba(0, 0, 0, 0.5);
    transition: all .3s;
+   background-color: #133245;
+   opacity: .85;
+   border-radius: 20px;
+
 }
 .task-card:hover {
-   background-color: black;
-   opacity: .8;
-   box-shadow: 0 14px 30px -15px rgba(0, 0, 0, 1);
-   transition: all .8s;
+   background-color: #133245;
+   box-shadow: 0 50px 50px 1px rgba(0, 0, 0, 5);
+   transition: all .3s;
 }
 
 .task-links a {
+    font-size: 22px;
+    font-weight: 500;
+    color: #4284AD;
+    background-color: #453013;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px;
+    padding: 15px;
+    border-radius: 10px;
+
+
 }
 
 .task-details h4 {
-    border-top: solid 1px;
-    font-size: 34px;
+
+    background-color: #133245;
+    border-top: solid 4px;
+    border-radius: 15px;
+
+    color: #915A0C;
+    font-size: 30px;
     text-align: center;
-    color: silver;
+    justify-content: center;
     font-weight: 500;
     display: block;
-    height: 60px;
-    overflow: hidden;
+    height: 80px;
 
 }
 
 .task-details p {
+    background-color:#453013;
+    color: #4284AD;
     text-align: center;
     font-size: 18px;
-    color: silver;
     height: 60px;
+    padding-top: 5px;
+    height:180px;
+    border-radius: 10px;
     overflow: hidden;
 }
 
 .progress-choice {
-    font-size: 30px;
-    border-top: solid 2px;
-    padding-top: 15px;
+    border-bottom: solid 2px;
+    border-top: solid 1px;
+
+
+    border-radius: 10px;
+    color: #915A0C;
+    font-size: 20px;
     text-align: center;
 
 }
 
 .create-date {
-    font-size: 20px;
-    border-bottom: solid 2px;
+    color: #915A0C;
+    font-size: 16px;
     padding-top: 15px;
     text-align: center;
 }
+
+
+
 /*Cards*/
