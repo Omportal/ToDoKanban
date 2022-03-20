@@ -89,19 +89,19 @@ a:hover {
 
 
 .task-card {
-
+   background: url("/static/img/paper3.jpg") 100% 0 no-repeat;
+   background-size: 100% 100%;
    border-color: #453013;
    width: 210px;
    margin-top: 20px;
    box-shadow: 0 30px 30px 1px rgba(0, 0, 0, 0.5);
    transition: all .3s;
-   background-color: #133245;
-   opacity: .85;
-   border-radius: 20px;
+   /* background-color: #133245; */
+   opacity: .95;
+   border-radius: 10px;
 
 }
 .task-card:hover {
-   background-color: #133245;
    box-shadow: 0 50px 50px 1px rgba(0, 0, 0, 5);
    transition: all .3s;
 }
@@ -109,24 +109,28 @@ a:hover {
 .task-links a {
     font-size: 22px;
     font-weight: 500;
-    color: #4284AD;
-    background-color: #453013;
+    color: #2D756A;
+  /*  background-color: #453013; */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 15px;
-    border-radius: 10px;
+    padding: 10px;
+    border-color: #133245;
+    border-top: solid 1px;
+    border-radius: 15px;
 
 
 }
 
 .task-details h4 {
 
-    background-color: #133245;
-    border-top: solid 4px;
-    border-radius: 15px;
+    /* background-color: #133245;
 
-    color: #915A0C;
+    border-top: solid 7px;
+    border-radius: 15px;
+    border-color:#453013;*/
+
+    color: #ab3535;
     font-size: 30px;
     text-align: center;
     justify-content: center;
@@ -137,9 +141,9 @@ a:hover {
 }
 
 .task-details p {
-    background-color:#453013;
-    color: #4284AD;
-    text-align: center;
+    /* background-color:#133245; */
+    color: black;
+   /* text-align: center;*/
     font-size: 18px;
     height: 60px;
     padding-top: 5px;
@@ -166,7 +170,9 @@ a:hover {
     padding-top: 15px;
     text-align: center;
 }
-
+ul li {
+    color:#915A0C;
+}
 
 
 /*Cards*/

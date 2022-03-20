@@ -9,17 +9,18 @@ class Taskform(ModelForm):
 
         widgets = {
             'title': TextInput(attrs={
-                'class': 'form-control',
+                'class': 'task-card',
                 'placeholder': 'Название задачи'
             }),
             'task': Textarea(attrs={
-                'class': 'form-control',
+                'class': 'task-card',
                 'placeholder': 'Описание задачи'
             }),
             'date': DateTimeInput(attrs={
-                'class': 'form-control',
+                'class': 'task-card',
                 'placeholder': 'Дата создания'
             }),
-            'progress_choice': Select()
+            'progress_choice': Select(attrs={
+                'class': 'task-card'})
 
         }

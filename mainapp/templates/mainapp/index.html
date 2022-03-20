@@ -8,12 +8,17 @@
                 <div class="col-lg-4 .col-sm-6" >
                     {% for obj in all_objects %}
                     {% if obj.progress_choice == "Need_to_do" %}
+
                     <div class="task-card">
+<!--                        <img src="/static/img//bul.png">-->
                         <div class="task-thumb">
                         </div>
                         <div class="task-details">
                             <h4>{{ obj.title }}</h4>
-                            <p>{{ obj.task }}</p>
+                            <ul><li>
+                                <p>{{ obj.task }}</p>
+                            </li></ul>
+
                         </div>
                         <div class="task-progress-date-info">
                             <div class="progress-choice">
@@ -23,7 +28,7 @@
                                 {{ obj.date }}
                             </div>
                             <div class="task-links">
-                                <a href="{% url 'mainapp:card' obj.title %}">Подробнее</button></a>
+                                <a href="{% url 'mainapp:card' obj.title %}">Details</button></a>
                             </div>
                         </div>
                     </div>
@@ -40,7 +45,9 @@
                         </div>
                         <div class="task-details">
                             <h4>{{ obj.title }}</h4>
-                            <p>{{ obj.task }}</p>
+                            <ul><li>
+                                <p>{{ obj.task }}</p>
+                            </li></ul>
                         </div>
                         <div class="task-progress-date-info">
                             <div class="progress-choice">
@@ -65,7 +72,9 @@
                         </div>
                         <div class="task-details">
                             <h4>{{ obj.title }}</h4>
-                            <p>{{ obj.task }}</p>
+                            <ul><li>
+                                <p>{{ obj.task }}</p>
+                            </li></ul>
                         </div>
                         <div class="task-progress-date-info">
                             <div class="progress-choice">

@@ -2,13 +2,13 @@
 {% block content %}
 
     {% for obj in one_card %}
-        <div class="card" style="width: 18rem;">
+        <div class="task-card" style="width: 25rem;">
           <div class="card-top">
            <div class="card-body">
-            <h5 class="card-title">{{ obj.title }}</h5>
-                <p class="card-text">{{ obj.task }}</p>
-                 <p class="card-text">{{ obj.progress_choice }}</p>
-                 <p class="card-text">{{ obj.date }}</p>
+            <div class="task-details"><h4>{{ obj.title }}</h4>
+                <p class="task-details">{{ obj.task }}</p>
+                 <p class="task-details">{{ obj.progress_choice }}</p>
+                 <p class="task-details">{{ obj.date }}</p>
                <a href="{% url 'mainapp:edit' obj.title %}"><button type="button" class="btn btn-dark">Редактировать</button></a>
            </div>
        </div>
