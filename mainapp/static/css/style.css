@@ -6,7 +6,7 @@ body {
     font-family: 'Roboto', sens-serif;
     font-size: 16px;
     font-weight: 400;
-    color: silver;
+    color: black;
     min-width: 320px;
 }
 
@@ -25,7 +25,7 @@ a {
 }
 
 a:hover {
-    color:#555;
+    color:black;
 }
 
 /*Header */
@@ -92,7 +92,8 @@ a:hover {
    background: url("/static/img/paper3.jpg") 100% 0 no-repeat;
    background-size: 100% 100%;
    border-color: #453013;
-   width: 210px;
+
+   width: 260px;
    margin-top: 20px;
    box-shadow: 0 30px 30px 1px rgba(0, 0, 0, 0.5);
    transition: all .3s;
@@ -107,17 +108,7 @@ a:hover {
 }
 
 .task-links a {
-    font-size: 22px;
-    font-weight: 500;
-    color: #2D756A;
-  /*  background-color: #453013; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    border-color: #133245;
-    border-top: solid 1px;
-    border-radius: 15px;
+
 
 
 }
@@ -144,7 +135,9 @@ a:hover {
     /* background-color:#133245; */
     color: black;
    /* text-align: center;*/
-    font-size: 18px;
+    font-style: italic;
+    font-weight:400;
+    font-size: 22px;
     height: 60px;
     padding-top: 5px;
     height:180px;
@@ -153,26 +146,58 @@ a:hover {
 }
 
 .progress-choice {
-    border-bottom: solid 2px;
-    border-top: solid 1px;
+
+    border-top: solid 2px;
 
 
-    border-radius: 10px;
-    color: #915A0C;
-    font-size: 20px;
+
+    font-size: 26px;
     text-align: center;
 
 }
 
 .create-date {
-    color: #915A0C;
-    font-size: 16px;
-    padding-top: 15px;
+    font-size: 18px;
+
+    padding-bottom: 15px;
     text-align: center;
 }
 ul li {
-    color:#915A0C;
+    color:black;
 }
+
+
+.card-body{
+    color: black;
+    font-size: 18px;
+    text-align: center;
+}
+
+.card-top{
+        background: url("/static/img/paper3.jpg") 100% 0 no-repeat;
+        background-size: 100% 100%;
+        width:400px;
+        height:auto;
+        position:absolute;
+        top:50%;
+        left:50%;
+        margin:-200px 0 0 -200px;
+        opacity: .95;
+        border-radius: 10px;
+}
+
+.card-top-one{
+
+        width:400px;
+        height:auto;
+        position:absolute;
+        top:50%;
+        left:50%;
+        margin:-200px 0 0 -200px;
+        opacity: .95;
+        border-radius: 10px;
+}
+
 
 
 /*Cards*/

@@ -3,13 +3,12 @@
    <div>
      <form method="post">
          {% csrf_token %}
-         {{ form.title }}<br>
-         {{ form.task }}<br>
-         {{ form.progress_choice }}<br>
-         {{ form.date }}<br>
+         <div class="card-body">
+             <p class="task-details">{{ form.task }}</p>
+               <div class="task-details">{{ form.progress_choice }}</div>
          <span>{{ error }}</span>
          <button class="btn btn-success" type="submit">Сохранить</button>
-
+           </div>
      </form>
    </div>
 {% endblock %}

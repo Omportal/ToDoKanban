@@ -5,7 +5,7 @@ from django.forms import ModelForm, TextInput, DateTimeInput, Textarea, Select
 class Taskform(ModelForm):
     class Meta:
         model = Task
-        fields = ["title", "task", "progress_choice", "date"]
+        fields = ["task", "progress_choice"]
 
         widgets = {
             'title': TextInput(attrs={

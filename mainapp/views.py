@@ -17,8 +17,8 @@ class TaskView(generic.ListView):
 
 
 
-def card(request, task_title):
-    one_card = Task.objects.filter(title=task_title)
+def card(request, task_id):
+    one_card = Task.objects.filter(id=task_id)
     template = loader.get_template('mainapp/card.html')
     context = {
         'one_card': one_card,
@@ -44,8 +44,8 @@ def create(request):
     return render(request, 'mainapp/create.html', data)
 
 
-def edit(request, task_title):
-    obj = Task.objects.get(title=task_title)
+def edit(request, task_id):
+    obj = Task.objects.get(id=task_id)
     error = ''
     if request.method == "POST":
         form = Taskform(request.POST, instance=obj)

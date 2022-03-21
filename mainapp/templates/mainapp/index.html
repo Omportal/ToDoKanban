@@ -8,13 +8,13 @@
                 <div class="col-lg-4 .col-sm-6" >
                     {% for obj in all_objects %}
                     {% if obj.progress_choice == "Need_to_do" %}
-
+                    <a href="{% url 'mainapp:card' obj.id %}">
                     <div class="task-card">
 <!--                        <img src="/static/img//bul.png">-->
                         <div class="task-thumb">
                         </div>
                         <div class="task-details">
-                            <h4>{{ obj.title }}</h4>
+
                             <ul><li>
                                 <p>{{ obj.task }}</p>
                             </li></ul>
@@ -25,13 +25,14 @@
                                 {{ obj.progress_choice }}
                             </div>
                             <div class="create-date ">
-                                {{ obj.date }}
+                                {{ obj.updated_at }}
                             </div>
                             <div class="task-links">
-                                <a href="{% url 'mainapp:card' obj.title %}">Details</button></a>
                             </div>
                         </div>
                     </div>
+                        </a>
+
 
                     {% endif %}
                     {% endfor %}
@@ -40,11 +41,11 @@
                 <div class="col-lg-4 .col-sm-6">
                     {% for obj in all_objects %}
                     {% if obj.progress_choice == "In_progress" %}
+                    <a href="{% url 'mainapp:card' obj.id %}">
                     <div class="task-card">
                         <div class="task-thumb">
                         </div>
                         <div class="task-details">
-                            <h4>{{ obj.title }}</h4>
                             <ul><li>
                                 <p>{{ obj.task }}</p>
                             </li></ul>
@@ -54,24 +55,25 @@
                                 {{ obj.progress_choice }}
                             </div>
                             <div class="create-date">
-                                {{ obj.date }}
+                                {{ obj.updated_at }}
                             </div>
                             <div class="task-links">
-                                <a href="{% url 'mainapp:card' obj.title %}">Подробнее</a>
+
                             </div>
                         </div>
                     </div>
+                        </a>
                     {% endif %}
                     {% endfor %}
                 </div>
                 <div class="col-lg-4 .col-sm-6">
                     {% for obj in all_objects %}
                     {% if obj.progress_choice == "Finish" %}
+                    <a href="{% url 'mainapp:card' obj.id %}">
                     <div class="task-card">
                         <div class="task-thumb">
                         </div>
                         <div class="task-details">
-                            <h4>{{ obj.title }}</h4>
                             <ul><li>
                                 <p>{{ obj.task }}</p>
                             </li></ul>
@@ -81,13 +83,14 @@
                                 {{ obj.progress_choice }}
                             </div>
                             <div class="create-date">
-                                {{ obj.date }}
+                                {{ obj.updated_at }}
                             </div>
                             <div class="task-links">
-                                <a href="{% url 'mainapp:card' obj.title %}">Подробнее</a>
+
                             </div>
                         </div>
                     </div>
+                        </a>
                     {% endif %}
                     {% endfor %}
                 </div>
@@ -95,6 +98,6 @@
         </div>
     </section>
     {% else %}
-    <p>No task are available.</p>
+    <h1>Нет ни одной задачи</h1>
     {% endif %}
 {% endblock %}
