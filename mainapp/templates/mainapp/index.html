@@ -1,13 +1,14 @@
 {% extends 'mainapp/base.html' %}
 {% block content %}
+{% if  user.is_authenticated %}
 {% if all_objects %}
-
     <section class="main-content">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 .col-sm-6" >
                     {% for obj in all_objects %}
                     {% if obj.progress_choice == "Need_to_do" %}
+
                     <a href="{% url 'mainapp:card' obj.id %}">
                     <div class="task-card">
 <!--                        <img src="/static/img//bul.png">-->
@@ -98,6 +99,10 @@
         </div>
     </section>
     {% else %}
-    <h1>Нет ни одной задачи</h1>
+    <h1>Создайте первую заметку</h1>
     {% endif %}
+    {% else %}
+
+    {% endif %}
+
 {% endblock %}
