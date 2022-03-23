@@ -1,40 +1,26 @@
-{% extends "base_generic.html" %}
-
+{% extends "mainapp/base.html" %}
 {% block content %}
 
-{% if form.errors %}
-  <p>Your username and password didn't match. Please try again.</p>
-{% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="task-card1" id="registration">
 
-{% if next %}
-  {% if user.is_authenticated %}
-    <p>Your account doesn't have access to this page. To proceed,
-    please login with an account that has access.</p>
-  {% else %}
-    <p>Please login to see this page.</p>
-  {% endif %}
-{% endif %}
+            <div class="card-top1"  >
 
-<form method="post" action="{% url 'login' %}">
-{% csrf_token %}
-<table>
+              <div class="card-body1" >
+                  <h5>REGISTRATION</h5>
 
-<tr>
-  <td>{{ form.username.label_tag }}</td>
-  <td>{{ form.username }}</td>
-</tr>
+        User name:<br> <input  type="text" name="username"><br>
+        Email:<br> <input type="email" name="email"><br>
+        Password:<br> <input type="password" name="password"><br>
+        Password again: <br><input type="password" name="password2"><br>
+        <input type="submit" class="btn btn-outline-danger " value="FINISH REGISTRATION">
 
-<tr>
-  <td>{{ form.password.label_tag }}</td>
-  <td>{{ form.password }}</td>
-</tr>
-</table>
+              </div>
 
-<input type="submit" value="login" />
-<input type="hidden" name="next" value="{{ next }}" />
-</form>
+           </div>
 
-{# Assumes you setup the password_reset view in your URLconf #}
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+        </div>
 
+    </form>
 {% endblock %}

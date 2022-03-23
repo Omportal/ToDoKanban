@@ -202,3 +202,30 @@ ul li {
 
 
 /*Cards*/
+
+ #registration {
+    text-align: center;
+    font-size:18px;
+    color:rgba(171, 53, 53, .8);
+    background: rgba(33,37,41);
+    width:400px;
+    height:auto;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin:-200px 0 0 -200px;
+    border-radius: 10px;
+    text-transform: uppercase;
+
+}
+
+.btn-outline-danger{
+    color:rgba(171, 53, 53, .9);
+    border-color: rgba(171, 53, 53, .9);
+
+}
+
+.card-top1 p a {
+    font-size: 14px;
+    color:rgba(171, 53, 53, .9);
+}

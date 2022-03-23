@@ -5,9 +5,9 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from .models import Task
-from django.urls import reverse
 from .forms import Taskform
 from django.views import generic
+from django.urls import reverse
 
 
 class TaskView(generic.ListView):
@@ -67,3 +67,20 @@ def edit(request, task_id):
         'error': error
     }
     return render(request, 'mainapp/edit.html', data)
+
+
+class RegisterView(generic.TemplateView):
+    template_name = "registration/registration.html"
+
+    def dispatch(self, request, *args, **kwargs):
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            email = request.POST.get('email')
+            password = request.POST.get('password')
+            password2 = request.POST.get('password2')
+
+            if password == password2 and username and len(password) > 1 :
+                User.objects.create_user(username, email, password)
+                return redirect(reverse("login"))
+
+        return render(request, self.template_name)
