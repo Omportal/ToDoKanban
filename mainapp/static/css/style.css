@@ -1,6 +1,5 @@
 
 body {
-
     background: url("/static/img/background.jpg") 100% 0 no-repeat fixed;
     background-size: 100% 100%;
     font-family: 'Roboto', sens-serif;
@@ -32,12 +31,14 @@ a:hover {
 
 .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .show>.nav-link {
     color: #ab3535;
+
     }
 
 .navbar-nav .nav-link {
     opacity: .8;
     font-weight: 500;
     text-transform: uppercase;
+
 }
 .nav-slogan {
     text-transform: uppercase;
@@ -64,9 +65,11 @@ a:hover {
     height: 1px;
     transition: all .3s;
     transform: scale(0);
+
 }
 .top-menu li a:hover::after{
     transform: scale(1);
+
 }
 .navbar-brand {
     padding-top: .3125rem;
@@ -87,12 +90,12 @@ a:hover {
 /*Header */
 /*Cards*/
 
-
 .task-card {
+
    background: url("/static/img/paper3.jpg") 100% 0 no-repeat;
    background-size: 100% 100%;
    border-color: #453013;
-
+   align-items: center;
    width: 260px;
    margin-top: 20px;
    box-shadow: 0 30px 30px 1px rgba(0, 0, 0, 0.5);
@@ -100,6 +103,8 @@ a:hover {
    /* background-color: #133245; */
    opacity: .95;
    border-radius: 10px;
+   margin-left:20%;
+   margin-bottom: 50px;
 
 }
 .task-card:hover {
@@ -169,6 +174,7 @@ ul li {
 
 
 .card-body{
+
     color: black;
     font-size: 18px;
     text-align: center;
@@ -228,4 +234,63 @@ ul li {
 .card-top1 p a {
     font-size: 14px;
     color:rgba(171, 53, 53, .9);
+}
+
+
+.progress-bar {
+    align-items: center;
+    background-color: rgba(33,37,41,.8);
+
+    font-size: 16px;
+    color:rgba(171, 53, 53, .7);
+    text-transform: uppercase;
+    border-bottom: solid 2px;
+
+
+}
+
+#task-edit{
+        position:absolute;
+        top:50%;
+        left:50%;
+        margin:-200px 0 0 -200px;
+        align-items: center;
+
+}
+
+#btn-edit {
+     position:absolute;
+}
+
+#create-task{
+
+}
+
+.sidebar {
+color:rgba(171, 53, 53, .7);
+background-color: rgba(33,37,41,0.9);
+height: 100%;
+width: 80px;
+position: fixed;
+left: 0;
+top: 0;
+padding-top: 80px;
+margin-top:55px;
+}
+.sidebar div {
+padding: 8px;
+font-size: 20px;
+display: block;
+}
+
+.sidebar div a  {
+    color:rgba(171, 53, 53, .7);;
+    text-decoration: none;
+padding: 8px;
+font-size: 20px;
+display: block;
+}
+.body-text {
+margin-left: 150px;
+font-size: 18px;
 }

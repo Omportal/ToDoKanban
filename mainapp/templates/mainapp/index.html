@@ -6,6 +6,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 .col-sm-6" >
+                    <div class="progress-bar">Need_To_Do</div>
                     {% for obj in all_objects %}
                     {% if obj.progress_choice == "Need_to_do" %}
 
@@ -22,9 +23,7 @@
 
                         </div>
                         <div class="task-progress-date-info">
-                            <div class="progress-choice">
-                                {{ obj.progress_choice }}
-                            </div>
+
                             <div class="create-date ">
                                 {{ obj.updated_at }}
                             </div>
@@ -40,6 +39,7 @@
 
                 </div>
                 <div class="col-lg-4 .col-sm-6">
+                    <div class="progress-bar">In_Progress</div>
                     {% for obj in all_objects %}
                     {% if obj.progress_choice == "In_progress" %}
                     <a href="{% url 'mainapp:card' obj.id %}">
@@ -52,9 +52,7 @@
                             </li></ul>
                         </div>
                         <div class="task-progress-date-info">
-                            <div class="progress-choice">
-                                {{ obj.progress_choice }}
-                            </div>
+
                             <div class="create-date">
                                 {{ obj.updated_at }}
                             </div>
@@ -68,6 +66,7 @@
                     {% endfor %}
                 </div>
                 <div class="col-lg-4 .col-sm-6">
+                    <div class="progress-bar">Finish</div>
                     {% for obj in all_objects %}
                     {% if obj.progress_choice == "Finish" %}
                     <a href="{% url 'mainapp:card' obj.id %}">
@@ -80,9 +79,7 @@
                             </li></ul>
                         </div>
                         <div class="task-progress-date-info">
-                            <div class="progress-choice">
-                                {{ obj.progress_choice }}
-                            </div>
+
                             <div class="create-date">
                                 {{ obj.updated_at }}
                             </div>
