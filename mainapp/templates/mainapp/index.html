@@ -1,104 +1,84 @@
 {% extends 'mainapp/base.html' %}
 {% block content %}
-{% if  user.is_authenticated %}
+{% if user.is_authenticated %}
 {% if all_objects %}
-    <section class="main-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 .col-sm-6" >
-                    <div class="progress-bar">Need_To_Do</div>
-                    {% for obj in all_objects %}
-                    {% if obj.progress_choice == "Need_to_do" %}
-
-                    <a href="{% url 'mainapp:card' obj.id %}">
-                    <div class="task-card">
-<!--                        <img src="/static/img//bul.png">-->
-                        <div class="task-thumb">
-                        </div>
-                        <div class="task-details">
-
-                            <ul><li>
-                                <p>{{ obj.task }}</p>
-                            </li></ul>
-
-                        </div>
-                        <div class="task-progress-date-info">
-
-                            <div class="create-date ">
-                                {{ obj.updated_at }}
-                            </div>
-                            <div class="task-links">
-                            </div>
-                        </div>
+<div class="content">
+    <div class="container">
+        <div class="card">
+            <div class="card__needToDo" name="Need_to_do" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+                <h2 class="progress_header">ToDO</h2>
+                {% for obj in all_objects %}
+                {% if obj.progress_choice == 'Need_to_do' %}
+                <div class="card__task todo" id="{{ obj.id }}" draggable="true" ondragstart="onDragStart(event);">
+                    <div class="card__details">
+                        <p>{{ obj.task }}</p>
                     </div>
-                        </a>
-
-
-                    {% endif %}
-                    {% endfor %}
+                    <div class="card__date">
+                        {{ obj.updated_at }}
+                    </div>
+                    <div class="card__btn">
+                        <a href="{% url 'mainapp:edit' obj.id %}" class="btn_edit">EDIT</a>
+                        <a href="{% url 'mainapp:card' obj.id %}" class="btn_delete">INFO</a>
+                    </div>
 
                 </div>
-                <div class="col-lg-4 .col-sm-6">
-                    <div class="progress-bar">In_Progress</div>
-                    {% for obj in all_objects %}
-                    {% if obj.progress_choice == "In_progress" %}
-                    <a href="{% url 'mainapp:card' obj.id %}">
-                    <div class="task-card">
-                        <div class="task-thumb">
-                        </div>
-                        <div class="task-details">
-                            <ul><li>
-                                <p>{{ obj.task }}</p>
-                            </li></ul>
-                        </div>
-                        <div class="task-progress-date-info">
-
-                            <div class="create-date">
-                                {{ obj.updated_at }}
-                            </div>
-                            <div class="task-links">
-
-                            </div>
-                        </div>
-                    </div>
-                        </a>
-                    {% endif %}
-                    {% endfor %}
-                </div>
-                <div class="col-lg-4 .col-sm-6">
-                    <div class="progress-bar">Finish</div>
-                    {% for obj in all_objects %}
-                    {% if obj.progress_choice == "Finish" %}
-                    <a href="{% url 'mainapp:card' obj.id %}">
-                    <div class="task-card">
-                        <div class="task-thumb">
-                        </div>
-                        <div class="task-details">
-                            <ul><li>
-                                <p>{{ obj.task }}</p>
-                            </li></ul>
-                        </div>
-                        <div class="task-progress-date-info">
-
-                            <div class="create-date">
-                                {{ obj.updated_at }}
-                            </div>
-                            <div class="task-links">
-
-                            </div>
-                        </div>
-                    </div>
-                        </a>
-                    {% endif %}
-                    {% endfor %}
-                </div>
+                {% endif %}
+                {% endfor %}
             </div>
-        </div>
-    </section>
-    {% else %}
-    {% endif %}
-    {% else %}
+            <div class="card__inProgress" name="In_progress" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+                <h2 class="progress_header">InProgress</h2>
+                {% for obj in all_objects %}
+                {% if obj.progress_choice == 'In_progress' %}
+                <div class="card__task todo" id="{{ obj.id }}" draggable="true" ondragstart="onDragStart(event);">
+                    <div class="card__details">
+                        <p>{{ obj.task }}</p>
+                    </div>
+                    <div class="card__date">
+                        {{ obj.updated_at }}
+                    </div>
+                    <div class="card__btn">
+                        <a href="{% url 'mainapp:edit' obj.id %}" class="btn_edit">EDIT</a>
+                        <a href="{% url 'mainapp:card' obj.id %}" class="btn_delete">INFO</a>
+                    </div>
 
-    {% endif %}
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="card__finish" name="Finish" ondragover="onDragOver(event);" ondrop="onDrop(event);">
+                <h2 class="progress_header">Finish</h2>
+                {% for obj in all_objects %}
+                {% if obj.progress_choice == 'Finish' %}
+                <div class="card__task todo" id="{{ obj.id }}" draggable="true" ondragstart="onDragStart(event);">
+                    <div class="card__details">
+                        <p>{{ obj.task }}</p>
+                    </div>
+                    <div class="card__date">
+                        {{ obj.updated_at }}
+                    </div>
+                    <div class="card__btn">
+                        <a href="{% url 'mainapp:edit' obj.id %}" class="btn_edit">EDIT</a>
+                        <a href="{% url 'mainapp:card' obj.id %}" class="btn_delete">INFO</a>
+                    </div>
+
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+</div>
+
+{% else %}
+{% endif %}
+
+{% else %}
+{% endif %}
+
 
 {% endblock %}

@@ -1,16 +1,19 @@
 {% extends 'mainapp/base.html' %}
 {% block content %}
    <div>
-     <form method="post">
+
+        <form method="post">
          {% csrf_token %}
+
          <div id="task-edit">
            <div class="card-body">
              <p class="task-details" >{{ form.task }}</p>
                <div class="task-details">{{ form.progress_choice }}</div>
          <span>{{ error }}</span>
                     <button class="btn btn-success" id="btn-edit" type="submit">Сохранить</button>
+               </div>
            </div>
-         </div>
+
      </form>
    </div>
 {% endblock %}

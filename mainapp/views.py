@@ -14,6 +14,13 @@ class TaskView(generic.ListView):
     template_name = 'mainapp/index.html'
     context_object_name = "all_objects"
 
+    def post(self, request, *args, **kwargs):
+        progress = request.POST.get('progress_choice')
+        pk = request.POST.get('id')
+        print(progress)
+        Task.objects.filter(pk=pk).update(progress_choice=f'{progress}')
+        return render(request, self.template_name)
+
     def get_queryset(self):
         queryset = Task.objects.filter(user=self.request.user.id)
         return queryset
@@ -79,7 +86,7 @@ class RegisterView(generic.TemplateView):
             password = request.POST.get('password')
             password2 = request.POST.get('password2')
 
-            if password == password2 and username and len(password) > 1 :
+            if password == password2 and username and len(password) > 1:
                 User.objects.create_user(username, email, password)
                 return redirect(reverse("login"))
 
